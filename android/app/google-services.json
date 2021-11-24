@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "253398504805",
+    "firebase_url": "https://demochatrealtime-6a9d0-default-rtdb.firebaseio.com",
+    "project_id": "demochatrealtime-6a9d0",
+    "storage_bucket": "demochatrealtime-6a9d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253398504805:android:3f6381f7d40915bacb3d8c",
+        "android_client_info": {
+          "package_name": "com.demochatrealtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253398504805-qm1aej9g98qbn6mbg750jour6crdio0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwRD2kWfRifU4OnUCNglo-eLo_rvJNqXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253398504805-qm1aej9g98qbn6mbg750jour6crdio0c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "253398504805-54pq3650m5u7ioh77qras099li9uqt87.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.DemoChatRealTime"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
