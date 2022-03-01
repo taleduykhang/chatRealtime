@@ -97,10 +97,10 @@ const Chat = ({navigation, route}: {navigation?: any; route: any}) => {
     }
   }, [image1]);
   const returnA = () => {
-    if (auth?.currentUser?.displayName == null) {
-      navigation.navigate('ListRoom', {item: 'admin'});
+    if (auth?.currentUser?.displayName == 'Captain') {
+      navigation.navigate('ListRoom', {item: {role: 'admin'}});
     } else {
-      navigation.navigate('ListRoom', {item: 'user'});
+      navigation.navigate('ListRoom', {item: {role: 'user'}});
     }
   };
   useLayoutEffect(() => {
@@ -175,7 +175,11 @@ const Chat = ({navigation, route}: {navigation?: any; route: any}) => {
       user,
       url,
     });
-    db.collection('MySpa').doc(name).update({text: text});
+    db.collection('MySpa').doc(name).update({
+      text: text,
+      time: createdAt,
+      read: false,
+    });
     setImage(''), setUrl('');
     // await setContent(text);
     // axios(method);
@@ -185,6 +189,7 @@ const Chat = ({navigation, route}: {navigation?: any; route: any}) => {
       data: {
         registration_ids: [
           'cdrHFaCYQIuKD-yuwRFlsF:APA91bGExHkMAenPghF2DxH4IbQkX2koVYOd2G29Q_5l90tZHejP8JzrISB4vzQczDHAUMVquhfiJkp3U59bx5wYZPBQbE7nMAuPmc8U55GiHC60oc2HwUA52Ym2_eL-87NUW20o71tr',
+          'd_EtACpmQ_iTen7FF0zf1F:APA91bFTSyM89xoskDNBuX-cqmYTbF_Bto1906qO_IoGDNDtElvARIb2Fmx4UK78k3rUJEi8lEqD3K_nIHXsc88YyX-Wd4I3PAuvPbY1jryxUI4k47Kilp58RXvKR3oHoG5h1le996oY',
         ],
         notification: {
           body: text,

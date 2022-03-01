@@ -7,9 +7,10 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('123456');
   const [avatar, setAvatar] = useState(
-    'https://media.viezone.vn/prod/2021/1/15/1610707534577_73f0ab6ad0.jpeg',
+    'https://static.wikia.nocookie.net/kpop/images/3/37/EXID_LE_B.L.E.S.S.E.D_promotional_photo.png/revision/latest?cb=20200824220259',
   );
   const id = new Date().valueOf();
+  const date = new Date();
   const register = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -30,14 +31,19 @@ const Register = () => {
               .doc(name)
               .set({
                 id: id,
-                name: name,
-                avatar: avatar
-                  ? avatar
-                  : 'https://m.media-amazon.com/images/I/51nAHcMPbbL._AC_.jpg',
-                text: '',
                 deviceTokenUser: [],
                 deviceTokenAdmin: [],
-                type: false,
+                chat: false,
+                text: '',
+                time: '',
+                read: false,
+                user: {
+                  name: name,
+                  avatar: avatar
+                    ? avatar
+                    : 'https://m.media-amazon.com/images/I/51nAHcMPbbL._AC_.jpg',
+                  role: 'user',
+                },
               });
           })
           .catch(function (error: any) {
